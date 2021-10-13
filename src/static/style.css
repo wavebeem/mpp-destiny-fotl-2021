@@ -1,0 +1,19 @@
+:root {
+  background: #222;
+  color: #ccc;
+  scrollbar-color: #ccc #222;
+  font-family: sans-serif;
+  padding: 2rem;
+}
+
+body {
+  display: grid;
+  gap: 0.5rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  box-shadow: 0 0 1px 0 white;
+  border-radius: 1rem;
+}
