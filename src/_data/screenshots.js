@@ -13,7 +13,9 @@ async function getScreenshots() {
 
 async function readInfo(filename) {
   const url = basePath + filename;
-  const name = path.basename(path.basename(filename, ".png"), ".jpg");
+  const name = path
+    .basename(path.basename(filename, ".png"), ".jpg")
+    .replace(/[_-]/g, " ");
   const file = path.join(root, filename);
   const { width, height } = getImageSize(file);
   const colors = await getImageColors(file);

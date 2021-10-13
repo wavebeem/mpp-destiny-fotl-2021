@@ -1,13 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="bg-near-black light-silver avenir overflow-y-scroll">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Creepster&family=Lobster&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/tachyons.css" />
     <link rel="stylesheet" href="/static/style.css" />
     <title>{{ title }}</title>
   </head>
-  <body>
+  <body class="min-vh-100 flex flex-column">
     {{ content }}
   </body>
 </html>

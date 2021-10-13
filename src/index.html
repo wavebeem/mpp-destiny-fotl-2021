@@ -1,24 +1,45 @@
 ---
+title: "MeowPewPew Costume Contest"
 layout: "layouts/basic.html"
 ---
 
-<h1>MeowPewPew Costume Contest</h1>
-
-<h2>Destiny 2 Festival of the Lost 2021</h2>
-
-<body>
-  <div class="image-list">
-    {% for img in screenshots %}
-    <figure class="screenshot">
-      <img
-        src="{{ img.url }}"
-        alt=""
-        width="{{ img.width }}"
-        height="{{ img.height }}"
-        loading="lazy"
-      />
-      <figcaption>{{ img.name }}</figcaption>
-    </figure>
-    {% endfor %}
+<header class="bg-black bb b--dark-gray white">
+  <div class="mw7 pv2 ph3 center flex items-center">
+    <img src="/static/logo.svg" alt="MeowPewPew" width="64" height="64" />
+    <h1 class="f3-ns f5">Costume Contest 2021</h1>
   </div>
-</body>
+</header>
+
+<nav class="bg-near-black bb b--dark-gray">
+  <div class="mw7 pv2 ph3 center flex flex-wrap">
+    <a class="yellow b no-underline pv2 mr3 dib" href="#">Home</a>
+    <a class="yellow b no-underline pv2 mr3 dib" href="#">Crucible</a>
+    <a class="yellow b no-underline pv2 mr3 dib" href="#">Gambit</a>
+    <a class="yellow b no-underline pv2 mr3 dib" href="#">Vanguard</a>
+    <a class="yellow b no-underline pv2 mr3 dib" href="#">Cute</a>
+    <a class="yellow b no-underline pv2 mr3 dib" href="#">Scary</a>
+  </div>
+</nav>
+
+<main class="mw7 pv2 ph3 center flex-auto">
+  <h2 class="f3-ns f5">Home</h2>
+  {% for img in screenshots %}
+  <figure class="ma0 mb4 bg-black pa2 br3 ba b--dark-gray">
+    <img
+      src="{{ img.url }}"
+      alt=""
+      width="{{ img.width }}"
+      height="{{ img.height }}"
+      loading="lazy"
+      class="h-auto br2"
+    />
+    <figcaption>
+      <a class="yellow no-underline" href="{{ img.url }}">{{ img.name }}</a>
+    </figcaption>
+  </figure>
+  {% endfor %}
+</main>
+
+<footer class="bt b--dark-gray">
+  <div class="mw7 pv3 ph3 center tc">&copy; 2021 MeowPewPew</div>
+</footer>
