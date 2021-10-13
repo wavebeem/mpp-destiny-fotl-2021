@@ -4,7 +4,7 @@ const getImageColors = require("get-image-colors");
 const getImageSize = require("image-size");
 const { AssetCache } = require("@11ty/eleventy-cache-assets");
 
-const basePath = "/static/img/";
+const basePath = "/static/img/crucible/";
 const root = path.resolve(__dirname, `../${basePath}`);
 
 async function getScreenshots() {
