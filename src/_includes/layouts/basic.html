@@ -9,6 +9,32 @@
     <title>{{ title }}</title>
   </head>
   <body class="min-vh-100 flex flex-column">
-    {{ content | safe }}
+    <header class="bg-black bb b--dark-gray white">
+      <div class="mw7 pv2 ph3 center flex items-center">
+        <img src="/static/logo.svg" alt="MeowPewPew" width="64" height="64" />
+        <h1 class="f3-ns f5">Costume Contest 2021</h1>
+      </div>
+    </header>
+
+    <nav class="bg-near-black bb b--dark-gray">
+      <div class="mw7 pv2 ph3 center flex flex-wrap">
+        <a class="yellow b no-underline pv2 mr3 dib" href="/">Home</a>
+        <a class="yellow b no-underline pv2 mr3 dib" href="/crucible/"
+          >Crucible</a
+        >
+        <a class="yellow b no-underline pv2 mr3 dib" href="/gambit/">Gambit</a>
+        <a class="yellow b no-underline pv2 mr3 dib" href="/vanguard/"
+          >Vanguard</a
+        >
+        <a class="yellow b no-underline pv2 mr3 dib" href="/cute/">Cute</a>
+        <a class="yellow b no-underline pv2 mr3 dib" href="/scary/">Scary</a>
+      </div>
+    </nav>
+
+    <main class="w-100 mw7 pv2 ph3 center flex-auto">{{ content | safe }}</main>
+
+    <footer class="bt b--dark-gray">
+      <div class="mw7 pv3 ph3 center tc">&copy; 2021 MeowPewPew</div>
+    </footer>
   </body>
 </html>
