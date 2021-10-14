@@ -1,6 +1,7 @@
 ---
 title: "MeowPewPew Costume Contest"
 layout: "layouts/basic.html"
+folder: "crucible"
 ---
 
 <header class="bg-black bb b--dark-gray white">
@@ -12,18 +13,18 @@ layout: "layouts/basic.html"
 
 <nav class="bg-near-black bb b--dark-gray">
   <div class="mw7 pv2 ph3 center flex flex-wrap">
-    <a class="yellow b no-underline pv2 mr3 dib" href="#">Home</a>
-    <a class="yellow b no-underline pv2 mr3 dib" href="#">Crucible</a>
-    <a class="yellow b no-underline pv2 mr3 dib" href="#">Gambit</a>
-    <a class="yellow b no-underline pv2 mr3 dib" href="#">Vanguard</a>
-    <a class="yellow b no-underline pv2 mr3 dib" href="#">Cute</a>
-    <a class="yellow b no-underline pv2 mr3 dib" href="#">Scary</a>
+    <a class="yellow b no-underline pv2 mr3 dib" href="/">Home</a>
+    <a class="yellow b no-underline pv2 mr3 dib" href="/crucible/">Crucible</a>
+    <a class="yellow b no-underline pv2 mr3 dib" href="/gambit/">Gambit</a>
+    <a class="yellow b no-underline pv2 mr3 dib" href="/vanguard/">Vanguard</a>
+    <a class="yellow b no-underline pv2 mr3 dib" href="/cute/">Cute</a>
+    <a class="yellow b no-underline pv2 mr3 dib" href="/scary/">Scary</a>
   </div>
 </nav>
 
 <main class="mw7 pv2 ph3 center flex-auto">
   <h2 class="f3-ns f5">Home</h2>
-  {% for img in screenshots %}
+  {% for img in screenshots[folder] %}
   <figure class="ma0 mb4 bg-black pa2 br3 ba b--dark-gray">
     <img
       src="{{ img.url }}"
