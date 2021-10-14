@@ -1,31 +1,35 @@
 const path = require("path");
 const fs = require("fs");
-const getImageSize = require("image-size");
+const Image = require("@11ty/eleventy-img");
 
-const folders = ["crucible", "gambit", "vanguard", "cute", "scary"];
+const folders = fs.readdirSync(path.join(__dirname, "../../img"));
 
 async function getScreenshots() {
-  return Object.fromEntries(
-    folders.map((folder) => {
-      return [folder, getOneFolder(folder)];
+  const entries = await Promise.all(
+    folders.map(async (folder) => {
+      return [folder, await getOneFolder(folder)];
+    })
+  );
+  console.log(Object.fromEntries(entries));
+  return Object.fromEntries(entries);
+}
+
+async function getOneFolder(folder) {
+  const root = path.resolve(__dirname, "../../img", folder);
+  return await Promise.all(
+    fs.readdirSync(root).map(async (filename) => {
+      return await readInfo({ root, filename });
     })
   );
 }
 
-function getOneFolder(folder) {
-  const root = path.resolve(__dirname, "../static/img", folder);
-  return fs
-    .readdirSync(root)
-    .map((filename) => readInfo({ folder, root, filename }));
-}
-
-function readInfo({ folder, root, filename }) {
-  const url = `/static/img/${folder}/${filename}`;
-  const name = path
-    .basename(path.basename(filename, ".png"), ".jpg")
-    .replace(/[_-]/g, " ");
-  const { width, height } = getImageSize(path.join(root, filename));
-  return { url, name, width, height };
+async function readInfo({ root, filename }) {
+  const data = await Image(path.join(root, filename), {
+    formats: ["jpeg"],
+    outputDir: "_site/img/",
+  });
+  const name = filename.replace(/\.(jpg|jpeg|png)$/, "");
+  return { ...data.jpeg[0], name };
 }
 
 module.exports = getScreenshots;
