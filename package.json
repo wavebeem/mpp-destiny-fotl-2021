@@ -4,7 +4,6 @@
   "version": "1.0.0",
   "dependencies": {
     "@11ty/eleventy": "^0.12.1",
-    "@11ty/eleventy-cache-assets": "^2.3.0",
     "image-size": "^1.0.0"
   },
   "devDependencies": {},
