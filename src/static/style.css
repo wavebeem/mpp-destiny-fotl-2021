@@ -1,3 +1,15 @@
 :root {
   scrollbar-color: #aaa #333;
 }
+
+.nav-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (min-width: 30em) {
+  .nav-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
