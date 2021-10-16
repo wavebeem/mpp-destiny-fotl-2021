@@ -2,6 +2,24 @@
   scrollbar-color: #aaa #333;
 }
 
+.cool-link {
+  text-decoration: none;
+}
+
+.cool-link:hover {
+  text-decoration: underline;
+}
+
+.cool-link:focus {
+  outline: 2px double;
+  outline-offset: 3px;
+}
+
+.copy-link:focus {
+  outline: 2px double;
+  outline-offset: 3px;
+}
+
 .nav-grid {
   display: grid;
   gap: 1rem;

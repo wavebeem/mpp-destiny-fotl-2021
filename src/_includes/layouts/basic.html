@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="bg-near-black light-silver avenir overflow-y-scroll">
+<html lang="en" class="bg-near-black moon-gray avenir overflow-y-scroll">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -8,33 +8,49 @@
     <link rel="stylesheet" href="/static/style.css" />
     <title>{{ title }}</title>
   </head>
-  <body class="min-vh-100 flex flex-column">
+  <body class="min-vh-100 flex flex-column f4">
     <header class="bg-black bb b--dark-gray white">
       <div class="mw7 pv2 ph3 center flex items-center">
         <img src="/static/logo.svg" alt="MeowPewPew" width="63" height="63" />
-        <h1 class="f2-l f3-m ml2 f4">Costume Contest 2021</h1>
+        <h1 class="f4 f3-m f2-l ml2">Costume Contest 2021</h1>
       </div>
     </header>
 
-    <nav class="bg-near-black bb b--dark-gray f4-ns">
+    <nav class="bg-near-black bb b--dark-gray">
       <div class="mw7 pv3 ph3 center nav-grid">
-        <a class="yellow no-underline dib" href="/">Home</a>
-        <a class="yellow no-underline dib" href="/crucible/">Crucible</a>
-        <a class="yellow no-underline dib" href="/gambit/">Gambit</a>
-        <a class="yellow no-underline dib" href="/vanguard/">Vanguard</a>
-        <a class="yellow no-underline dib" href="/best-shader/">Best Shader</a>
-        <a class="yellow no-underline dib" href="/blurst-exotic/"
+        <a class="yellow hover-light-yellow cool-link dib" href="/">Home</a>
+        <a class="yellow hover-light-yellow cool-link dib" href="/crucible/"
+          >Crucible</a
+        >
+        <a class="yellow hover-light-yellow cool-link dib" href="/gambit/"
+          >Gambit</a
+        >
+        <a class="yellow hover-light-yellow cool-link dib" href="/vanguard/"
+          >Vanguard</a
+        >
+        <a class="yellow hover-light-yellow cool-link dib" href="/best-shader/"
+          >Best Shader</a
+        >
+        <a
+          class="yellow hover-light-yellow cool-link dib"
+          href="/blurst-exotic/"
           >Blurst Exotic</a
         >
-        <a class="yellow no-underline dib" href="/cute/">Cute</a>
-        <a class="yellow no-underline dib" href="/scary/">Scary</a>
-        <a class="yellow no-underline dib" href="/cosplay/">Cosplay</a>
+        <a class="yellow hover-light-yellow cool-link dib" href="/cute/"
+          >Cute</a
+        >
+        <a class="yellow hover-light-yellow cool-link dib" href="/scary/"
+          >Scary</a
+        >
+        <a class="yellow hover-light-yellow cool-link dib" href="/cosplay/"
+          >Cosplay</a
+        >
       </div>
     </nav>
 
-    <main class="w-100 mw7 pv2 ph3 center flex-auto">{{ content | safe }}</main>
+    <main class="w-100 mw7 pv2 ph3 center flex-auto lh-copy">{{ content | safe }}</main>
 
-    <footer class="bt b--dark-gray">
+    <footer class="bt b--dark-gray silver">
       <div class="mw7 pv3 ph3 center tc">&copy; 2021 MeowPewPew</div>
     </footer>
   </body>

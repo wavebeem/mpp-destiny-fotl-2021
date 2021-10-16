@@ -2,9 +2,7 @@
 layout: "layouts/basic.html"
 ---
 
-{{ content | safe }}
-
-{% for img in screenshots[folder] %}
+{{ content | safe }} {% for img in screenshots[folder] %}
 <figure class="ma0 mb4 bg-black pa2 br3 ba b--dark-gray">
   <img
     src="{{ img.url }}"
@@ -15,7 +13,9 @@ layout: "layouts/basic.html"
     class="h-auto br2"
   />
   <figcaption class="truncate">
-    <a class="yellow no-underline" href="{{ img.url }}">{{ img.name }}</a>
+    <a class="yellow hover-light-yellow cool-link" href="{{ img.url }}"
+      >{{ img.name }}</a
+    >
   </figcaption>
 </figure>
 {% endfor %}
