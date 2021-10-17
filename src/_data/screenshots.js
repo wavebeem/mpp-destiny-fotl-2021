@@ -28,7 +28,7 @@ async function readInfo({ root, filename }) {
     formats: ["jpeg"],
     outputDir: "_site/img/",
   });
-  const name = filename.replace(/\.(jpg|jpeg|png)$/, "");
+  const name = filename.replace(/\.(jpg|jpeg|png)$/, "").replace(/_/g, " ");
   return { ...data.jpeg[0], name };
 }
 
