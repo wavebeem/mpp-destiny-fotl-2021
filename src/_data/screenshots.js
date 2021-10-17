@@ -10,7 +10,6 @@ async function getScreenshots() {
       return [folder, await getOneFolder(folder)];
     })
   );
-  console.log(Object.fromEntries(entries));
   return Object.fromEntries(entries);
 }
 
