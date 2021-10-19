@@ -11,14 +11,14 @@
   </head>
   <body class="min-vh-100 flex flex-column f4">
     <header class="bg-black bb b--dark-gray white">
-      <div class="mw9 pv2 ph3 center flex items-center">
+      <div class="mw9 pv2 ph4 center flex items-center">
         <img src="/static/logo.svg" alt="MeowPewPew" width="63" height="63" />
         <h1 class="f4 f3-m f2-l ml2">Costume Contest 2021</h1>
       </div>
     </header>
 
     <nav class="bg-near-black bb b--dark-gray">
-      <div class="mw9 pv3 ph3 center nav-grid">
+      <div class="mw9 pv3 ph4 center nav-grid">
         <a class="yellow hover-light-yellow cool-link dib" href="/">Home</a>
         <a class="yellow hover-light-yellow cool-link dib" href="/crucible/"
           >Crucible</a
@@ -49,10 +49,20 @@
       </div>
     </nav>
 
-    <main class="w-100 mw9 pv2 ph3 center flex-auto lh-copy">{{ content | safe }}</main>
+    <main class="w-100 mw9 pv2 ph4 center flex-auto lh-copy">
+      {{ content | safe }}
+    </main>
 
     <footer class="bt b--dark-gray silver f5">
-      <div class="mw9 pv3 ph3 center tc">&copy; 2021 MeowPewPew</div>
+      <div class="mw9 pv3 ph4 center tc">
+        &copy; 2021
+        <a
+          href="https://www.wavebeem.com/"
+          class="moon-gray hover-near-white copy-link"
+          >wavebeem</a
+        >
+        & MeowPewPew
+      </div>
     </footer>
   </body>
 </html>

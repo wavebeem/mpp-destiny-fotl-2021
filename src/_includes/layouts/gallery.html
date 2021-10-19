@@ -2,7 +2,9 @@
 layout: "layouts/basic.html"
 ---
 
-{{ content | safe }} {% for img in screenshots[folder] %}
+{{ content | safe }}
+<div class="mt4"></div>
+{% for img in screenshots[folder] %}
 <figure class="ma0 mb4 bg-black pa2 br3 ba b--dark-gray">
   <img
     src="{{ img.url }}"
