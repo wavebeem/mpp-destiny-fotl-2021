@@ -16,9 +16,18 @@ async function getScreenshots() {
 async function getOneFolder(folder) {
   const root = path.resolve(__dirname, "../../img", folder);
   return await Promise.all(
-    fs.readdirSync(root).map(async (filename) => {
-      return await readInfo({ root, filename });
-    })
+    fs
+      .readdirSync(root)
+      .filter((filename) => {
+        return (
+          filename.endsWith(".png") ||
+          filename.endsWith(".jpg") ||
+          filename.endsWith(".jpeg")
+        );
+      })
+      .map(async (filename) => {
+        return await readInfo({ root, filename });
+      })
   );
 }
 
