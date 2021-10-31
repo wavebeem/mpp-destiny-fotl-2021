@@ -1,11 +1,11 @@
 ---
-layout: "layouts/basic.njk"
+layout: "layouts/basic"
 ---
 
 {{ content | safe }}
 <div class="mt4"></div>
 {% for img in screenshots[folder] %}
-<figure class="ma0 mb4 bg-black pa2 br3 ba b--dark-gray">
+<figure class="ma0 mb4 bg-black pa2 br3 ba {% if img.isWinner %}b--yellow{% else %}b--dark-gray{% endif %}">
   <img
     src="{{ img.url }}"
     alt=""

@@ -50,34 +50,23 @@
     </header>
 
     <nav class="bg-near-black bb b--dark-gray">
-      <div class="mw9 pv3 ph3 ph4-ns center nav-grid">
-        <a class="yellow hover-light-yellow cool-link dib" href="/">Home</a>
-        <a class="yellow hover-light-yellow cool-link dib" href="/crucible/"
-          >Crucible</a
-        >
-        <a class="yellow hover-light-yellow cool-link dib" href="/gambit/"
-          >Gambit</a
-        >
-        <a class="yellow hover-light-yellow cool-link dib" href="/vanguard/"
-          >Vanguard</a
-        >
-        <a class="yellow hover-light-yellow cool-link dib" href="/best-shader/"
-          >Best Shader</a
-        >
-        <a
-          class="yellow hover-light-yellow cool-link dib"
-          href="/blurst-exotic/"
-          >Blurst Exotic</a
-        >
-        <a class="yellow hover-light-yellow cool-link dib" href="/cute/"
-          >Cute</a
-        >
-        <a class="yellow hover-light-yellow cool-link dib" href="/scary/"
-          >Scary</a
-        >
-        <a class="yellow hover-light-yellow cool-link dib" href="/cosplay/"
-          >Cosplay</a
-        >
+      <!-- prettier-ignore -->
+      <div class="mw9 ph3 center flex flex-wrap">
+        {% for section in sections %}
+          {% set class %}
+             cool-link db pv3 ph3
+             bb bw1
+            {% if section.url == page.url %}
+              white
+            {% else %}
+              yellow hover-light-yellow b--transparent
+            {% endif %}
+          {% endset %}
+          <a
+            class="{{ class }}"
+            href="{{ section.url }}"
+          >{{ section.name }}</a>
+        {% endfor %}
       </div>
     </nav>
 

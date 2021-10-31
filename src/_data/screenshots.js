@@ -36,8 +36,9 @@ async function readInfo({ root, filename }) {
     formats: ["jpeg"],
     outputDir: "_site/img/",
   });
-  const name = filename.replace(/\.(jpg|jpeg|png)$/, "").replace(/_/g, " ");
-  return { ...data.jpeg[0], name };
+  const name = filename.replace(/\.(jpg|jpeg|png)$/, "");
+  const isWinner = name.includes("WINNER");
+  return { ...data.jpeg[0], name, isWinner };
 }
 
 module.exports = getScreenshots;
