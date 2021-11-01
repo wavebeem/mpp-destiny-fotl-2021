@@ -51,11 +51,12 @@
 
     <nav class="bg-near-black bb bw1 b--dark-gray">
       <!-- prettier-ignore -->
-      <div class="mw9 ph3-ns center nav-grid">
+      <div class="mw9 ph3-ns pv3 pv0-l center nav-grid">
         {% for section in sections %}
           {% set class %}
              cool-link db pv3 ph3
              ba br-0-l bt-0-l bl-0-l bw1
+             br3 br0-l
             {% if section.url == page.url %}
               white
             {% else %}
