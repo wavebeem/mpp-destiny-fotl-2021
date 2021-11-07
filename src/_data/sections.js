@@ -1,5 +1,6 @@
 const sections = [
   { url: "/", name: "Home" },
+  { url: "/best/", name: "Best" },
   { url: "/crucible/", name: "Crucible" },
   { url: "/gambit/", name: "Gambit" },
   { url: "/vanguard/", name: "Vanguard" },

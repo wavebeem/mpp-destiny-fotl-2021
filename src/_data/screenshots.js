@@ -37,8 +37,15 @@ async function readInfo({ root, filename }) {
     outputDir: "_site/img/",
   });
   const name = filename.replace(/\.(jpg|jpeg|png)$/, "");
-  const isWinner = name.includes("WINNER");
-  return { ...data.jpeg[0], name, isWinner };
+  const classNames = Object.entries({
+    "BEST IN SHOW": "b--green",
+    "BEST HUNTER": "b--blue",
+    "BEST TITAN": "b--red",
+    "BEST WARLOCK": "b--yellow",
+    WINNER: "b--white",
+    "": "b--dark-gray",
+  }).flatMap(([k, v]) => (name.includes(k) ? [v] : []))[0];
+  return { ...data.jpeg[0], name, classNames };
 }
 
 module.exports = getScreenshots;
