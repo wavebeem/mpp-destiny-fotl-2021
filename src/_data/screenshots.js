@@ -44,7 +44,12 @@ async function readInfo({ root, filename }) {
     "BEST WARLOCK": "b--yellow",
     WINNER: "b--white",
     "": "b--dark-gray",
-  }).flatMap(([k, v]) => (name.includes(k) ? [v] : []))[0];
+  }).flatMap(([k, v]) => {
+    if (name.includes(k)) {
+      return [v];
+    }
+    return [];
+  })[0];
   return { ...data.jpeg[0], name, classNames };
 }
 
