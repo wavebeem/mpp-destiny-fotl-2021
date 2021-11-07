@@ -1,6 +1,6 @@
 const path = require("path");
 const fs = require("fs");
-const Image = require("@11ty/eleventy-img");
+const loadImage = require("@11ty/eleventy-img");
 
 const folders = fs.readdirSync(path.join(__dirname, "../../img"));
 
@@ -32,7 +32,7 @@ async function getOneFolder(folder) {
 }
 
 async function readInfo({ root, filename }) {
-  const data = await Image(path.join(root, filename), {
+  const data = await loadImage(path.join(root, filename), {
     formats: ["jpeg"],
     outputDir: "_site/img/",
   });
