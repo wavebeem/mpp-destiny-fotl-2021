@@ -51,4 +51,3 @@ async function readInfo({ root, filename }) {
 }
 
 module.exports = getScreenshots;
-e;
