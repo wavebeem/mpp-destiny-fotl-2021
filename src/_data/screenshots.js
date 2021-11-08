@@ -31,26 +31,24 @@ async function getOneFolder(folder) {
   );
 }
 
+function getClassNames(name) {
+  if (name.includes("BEST IN SHOW")) return "b--green";
+  if (name.includes("BEST HUNTER")) return "b--blue";
+  if (name.includes("BEST TITAN")) return "b--red";
+  if (name.includes("BEST WARLOCK")) return "b--yellow";
+  if (name.includes("WINNER")) return "b--white";
+  return "b--dark-gray";
+}
+
 async function readInfo({ root, filename }) {
   const data = await loadImage(path.join(root, filename), {
     formats: ["jpeg"],
     outputDir: "_site/img/",
   });
   const name = filename.replace(/\.(jpg|jpeg|png)$/, "");
-  const classNames = Object.entries({
-    "BEST IN SHOW": "b--green",
-    "BEST HUNTER": "b--blue",
-    "BEST TITAN": "b--red",
-    "BEST WARLOCK": "b--yellow",
-    WINNER: "b--white",
-    "": "b--dark-gray",
-  }).flatMap(([k, v]) => {
-    if (name.includes(k)) {
-      return [v];
-    }
-    return [];
-  })[0];
+  const classNames = getClassNames(name);
   return { ...data.jpeg[0], name, classNames };
 }
 
 module.exports = getScreenshots;
+e;
